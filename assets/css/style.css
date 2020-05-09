@@ -1,5 +1,23 @@
 img {
-  border: 0px;
-  padding: 5px;
+  padding: 0px 5px 0px 0px;
+  margin-left: 10px;
   width: 65px;
+}
+
+h1 {
+  position: relative;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#app-start {
+  text-align: center;
 }
