@@ -25,7 +25,7 @@
   <!-- WELCOME SECTION -->
   <main>
     <section id="about-area">
-      <h1>Welcome to<br>MoviePhood!<br>Press start to begin</h1>
+      <h1>Welcome to MoviePhood!<br>Press start to begin</h1>
     </section>
 
     <!-- CARDS AREA -->
@@ -43,8 +43,6 @@
         </div>
       </div>
 
-
-
       <!-- START BUTTON -->
       <div class="btn-large" id="app-start">
         <span>Start</span>
@@ -52,43 +50,44 @@
 
       <!--USER INPUT SECTION RELATED TO MOVIEs/FOOD/DRINKS -->
       <section class="container teal lighten-5" id="user-input-section"></section>
+
       <!--REVIEWS SLIDESHOW -->
       <section>
         <div class="container">
-          <p>See the reviews of MoviePhood!</p>
-          <div class="carousel carousel-slider center">
+          <div class="carousel carousel-slider center" id="carousel">
             <div class="carousel-fixed-item center">
-
             </div>
+            
             <div class="carousel-item red white-text" href="#one!">
               <h2>"I love this website, it is amazing!"</h2>
               <p class="white-text">- Jackie Kennedy</p>
-              <p class="white-text"> NEXT </p>
+              <button class="black-text"> NEXT </button>
             </div>
             <div class="carousel-item amber white-text" href="#two!">
               <h2>"MoviePhood always helps me figure out my perfect movie night."</h2>
               <p class="white-text">- George Washington</p>
-              <p class="white-text"> NEXT </p>
+              <button class="black-text"> NEXT </button>
             </div>
             <div class="carousel-item green white-text" href="#three!">
               <h2>"MoviePhood, you complete me."</h2>
               <p class="white-text">- Jerry McGuire</p>
-              <p class="white-text"> NEXT </p>
+              <button class="black-text"> NEXT </button>
             </div>
             <div class="carousel-item blue white-text" href="#four!">
               <h2>"Movies, food. What's not to love?!?!"</h2>
               <p class="white-text">- Michael Jordan</p>
-              <p class="white-text"> NEXT </p>
+              <button class="black-text"> NEXT </button>
             </div>
             <div class="carousel-item purple white-text" href="#four!">
               <h2>"I don't know how to live without MoviePhood! I never paired the right</br> movie to the
                 right before."</h2>
               <p class="white-text">- Albert Einstien</p>
-              <p class="white-text"> NEXT </p>
+              <button class="black-text"> NEXT </button>
             </div>
           </div>
         </div>
       </section>
+
   </main>
 
   <!--FOOTER -->
@@ -96,7 +95,7 @@
   <footer class="page-footer">
     <div class="row">
       <div class="col s12 m6">
-        © 2014 Copyright Text
+        © 2020 Copyright The Wicked Coders
       </div>
     </div>
   </footer>
@@ -108,20 +107,8 @@
   <!-- OUR JS SCRIPTS -->
   <script src="assets/js/script.js"></script>
   <script src="assets/js/moviescript.js"></script>
-  <!--MATERIALIZE SLIDESHOW SCRIPT-->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.carousel');
-      var instances = M.Carousel.init(elems);
-    });
-
-    var instance = M.Carousel.init({
-      fullWidth: true,
-      indicators: true
-    });
 
 
-  </script>
 </body>
 
 </html>

@@ -28,3 +28,7 @@ main {
 .card-title {
   text-align: center;
 }
+
+#carousel {
+  margin-top: 20px;
+}
