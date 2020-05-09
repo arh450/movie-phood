@@ -67,7 +67,7 @@ $(document).ready(function () {
                 // Variable that gives release date of recomended (random movie)
                 var recMovieYear = recMovieResult.release_date;
                 // Variable that gives recommended (random) movie poster using theMovieDB image url
-                var recMoviePoster = `http://image.tmdb.org/t/p/w200${recMovieResult.poster_path}`;
+                var recMoviePoster = `http://image.tmdb.org/t/p/w300${recMovieResult.poster_path}`;
 
                 // Set empty userMovieInfo object with recommended random movie result data
                 userMovieInfo = {
@@ -80,7 +80,10 @@ $(document).ready(function () {
                 console.log(userMovieInfo);
 
                 // For test purposes to display to page
-                // $("#test-random-movie").text(`You should check out: ${finalMovieTitle}`);
+                $("#test-movie-title").text(userMovieInfo.title);
+                $("#test-movie-image").attr("src", userMovieInfo.imgSrc);
+                $("#test-movie-year").text(`Year: ${userMovieInfo.year}`);
+                $("#test-movie-plot").text(`Plot: ${userMovieInfo.plot}`);
             });
         });
     });
