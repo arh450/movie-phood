@@ -1,4 +1,4 @@
-(document).ready(function () {
+$(document).ready(function () {
 
     // On click of #app-start button ("start on html") #about-area (title & description is hidden)
     // Then the empty #user-input-section is loaded with the moviesection html
