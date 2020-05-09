@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Phood Project</title>
-    <!-- MATERIALIZE CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <!-- OUR CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
 
-  <body>
-    <!-- NAV SECTION -->
-    <header>
-      <nav>
-        <div class="nav-wrapper">
-          <a class="left brand-logo"
-            ><img src="assets/img/moviephood_logo.png"
-          /></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Phood Project</title>
+  <!-- MATERIALIZE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- OUR CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-    <!-- WELCOME SECTION -->
-    <main>
-      <section id="about-area">
-        <h1>Welcome to<br>MoviePhood!<br>Press start to begin</h1>
-      </section>
+<body>
+  <!-- NAV SECTION -->
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a class="left brand-logo"><img src="assets/img/moviephood_logo.png" /></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
+      </div>
+    </nav>
+  </header>
 
-      <!-- CARDS AREA -->
-      <div class="row">
-        <div class="col s12 m12">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
+  <!-- WELCOME SECTION -->
+  <main>
+    <section id="about-area">
+      <h1>Welcome to<br>MoviePhood!<br>Press start to begin</h1>
+    </section>
+
+    <!-- CARDS AREA -->
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p>
+              I am a very simple card. I am good at containing small bits of
+              information. I am convenient because I require little markup to
+              use effectively.
+            </p>
           </div>
         </div>
+      </div>
 
-      
+
 
       <!-- START BUTTON -->
       <div class="btn-large" id="app-start">
@@ -55,28 +51,77 @@
       </div>
 
       <!--USER INPUT SECTION RELATED TO MOVIEs/FOOD/DRINKS -->
-      <section
-        class="container teal lighten-5"
-        id="user-input-section"
-      ></section>
-    </main>
+      <section class="container teal lighten-5" id="user-input-section"></section>
+      <!--REVIEWS SLIDESHOW -->
+      <section>
+        <div class="container">
+          <p>See the reviews of MoviePhood!</p>
+          <div class="carousel carousel-slider center">
+            <div class="carousel-fixed-item center">
 
-    <!--FOOTER -->
-
-    <footer class="page-footer">
-      <div class="row">
-        <div class="col s12 m6">
-          © 2014 Copyright Text
+            </div>
+            <div class="carousel-item red white-text" href="#one!">
+              <h2>"I love this website, it is amazing!"</h2>
+              <p class="white-text">- Jackie Kennedy</p>
+              <p class="white-text"> NEXT </p>
+            </div>
+            <div class="carousel-item amber white-text" href="#two!">
+              <h2>"MoviePhood always helps me figure out my perfect movie night."</h2>
+              <p class="white-text">- George Washington</p>
+              <p class="white-text"> NEXT </p>
+            </div>
+            <div class="carousel-item green white-text" href="#three!">
+              <h2>"MoviePhood, you complete me."</h2>
+              <p class="white-text">- Jerry McGuire</p>
+              <p class="white-text"> NEXT </p>
+            </div>
+            <div class="carousel-item blue white-text" href="#four!">
+              <h2>"Movies, food. What's not to love?!?!"</h2>
+              <p class="white-text">- Michael Jordan</p>
+              <p class="white-text"> NEXT </p>
+            </div>
+            <div class="carousel-item purple white-text" href="#four!">
+              <h2>"I don't know how to live without MoviePhood! I never paired the right</br> movie to the
+                right before."</h2>
+              <p class="white-text">- Albert Einstien</p>
+              <p class="white-text"> NEXT </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+      </section>
+  </main>
 
-    <!-- MATERIALIZE CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- OUR JS SCRIPTS -->
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/moviescript.js"></script>
-  </body>
+  <!--FOOTER -->
+
+  <footer class="page-footer">
+    <div class="row">
+      <div class="col s12 m6">
+        © 2014 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+  <!-- MATERIALIZE CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- OUR JS SCRIPTS -->
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/moviescript.js"></script>
+  <!--MATERIALIZE SLIDESHOW SCRIPT-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems);
+    });
+
+    var instance = M.Carousel.init({
+      fullWidth: true,
+      indicators: true
+    });
+
+
+  </script>
+</body>
+
 </html>
