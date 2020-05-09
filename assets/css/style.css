@@ -5,7 +5,7 @@ img {
 }
 
 h1 {
-  position: relative;
+  text-align: center;
 }
 
 body {
@@ -19,5 +19,12 @@ main {
 }
 
 #app-start {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.card-title {
   text-align: center;
 }
