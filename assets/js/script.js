@@ -9,16 +9,27 @@ $(document).ready(function () {
     indicators: true,
   });
 
-  // Empty object that stores users random movie recommendation information
+  // Empty object that stores users random movie/food/drink recommendations and information
 
-  var userMovieInfo = {
-    title: "",
-    year: "",
-    imgSrc: "",
-    plot: ""
+  var userCombination = {
+
+    userMovieInfo: {
+      mTitle: "",
+      mYear: "",
+      mImgSrc: "",
+      mPlot: ""
+    },
+
+    userFoodInfo: {
+      fTitle: "",
+      fImgSrc: "",
+      fRecipe: ""
+    },
+
+
+
+
   }
-
-
   function renderHtml(html) {
     $("#user-input-section").load(html);
   }
@@ -145,23 +156,21 @@ $(document).ready(function () {
 
           // Set empty userMovieInfo object with recommended random movie result data
           userMovieInfo = {
-            title: recMovieResult.title,
-            year: recMovieYear[0],
-            imgSrc: recMoviePoster,
-            plot: recMovieResult.overview
+            mTitle: recMovieResult.title,
+            mYear: recMovieYear[0],
+            mImgSrc: recMoviePoster,
+            mPlot: recMovieResult.overview
           }
 
-          // console.log(userMovieInfo);
-
+          console.log(userMovieInfo);
         });
-
       });
-
       renderHtml("foodsection.html");
       populateFoodSelect()
-    } else alert("please enter Three Movies before submitting!");
-
-    renderHtml("moviesection.hmtl");
+    } else {
+      alert("please enter Three Movies before submitting!")
+      renderHtml("moviesection.hmtl");
+    }
   });
 });
 
@@ -170,6 +179,53 @@ $(document).on("click", "#food-submit", function (event) {
 
   // Variable to show what user selected for food category
   var userFoodCategory = $("#food-category-select").val();
-  console.log(userFoodCategory);
+  // console.log(userFoodCategory);
+
+  // if statement to prevent user from leaving food select blank
+  if (userFoodCategory === null) {
+    alert("please select a food category");
+  } else {
+
+    // theMealDB to filter users selected food category
+    var filterFoodURL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${userFoodCategory}`;
+    // AJAX call to get filtered response
+    $.get(filterFoodURL).then(function (filteredResponse) {
+      // console.log(filteredResponse);
+
+      // Varialbe similar to randomUserMovieInput, that generates a random index position from the filteredResponse
+      var randomFoodResult = Math.floor(Math.random() * filteredResponse.meals.length);
+      // console.log(randomFoodResult);
+
+      // Variable that takes the randomFoodResult (number/index position) and matches within the filteredResponse array of objects and returns the meal title
+      var recFoodTitle = filteredResponse.meals[randomFoodResult].strMeal;
+      // console.log(recFoodTitle);
+
+      // Variable similar to recFoodTitle, that instead returning food title (.strMeal), it returns the food's image path
+      var recFoodImage = filteredResponse.meals[randomFoodResult].strMealThumb;
+      // console.log(recFoodImage);
+
+      // Last AJAX call regarding food, this searches the recFoodTitle (food name) and is used to get the recipe source for the food
+      var foodSearchURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recFoodTitle}`;
+
+      $.get(foodSearchURL).then(function (searchResponse) {
+        // console.log(searchResponse);
+
+        // Variable to return the recipe source (URL) from the searchResponse
+        var recFoodRecipe = searchResponse.meals[0].strSource;
+        // console.log(recFoodRecipe);
+
+        userFoodInfo = {
+          fTitle: recFoodTitle,
+          fImgSrc: recFoodImage,
+          fRecipe: recFoodRecipe
+        }
+
+        console.log(userFoodInfo);
+
+      });
+
+
+    });
+  }
 });
 
