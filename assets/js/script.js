@@ -171,6 +171,7 @@ $(document).ready(function () {
           }
 
           console.log(userMovieInfo);
+          localStorage.setItem('MovieInfo', JSON.stringify(userMovieInfo));
         });
       });
       renderHtml("foodsection.html");
@@ -229,7 +230,7 @@ $(document).ready(function () {
           }
 
           console.log(userFoodInfo);
-
+          localStorage.setItem('FoodInfo', JSON.stringify(userFoodInfo));
         });
 
       });
@@ -283,10 +284,10 @@ $(document).ready(function () {
           }
 
           console.log(userDrinkInfo);
-
+          localStorage.setItem('DrinkInfo', JSON.stringify(userDrinkInfo));
         });
       });
-
+      window.location.replace("results.html");
     }
   });
 

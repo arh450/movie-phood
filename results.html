@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Phood Project</title>
+    <!-- MATERIALIZE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- OUR CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- NAV SECTION -->
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a class="left brand-logo"><img src="assets/img/moviephood_logo.png" /></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- RESULTS SECTION -->
+    <section class="container" id="user-results-section">
+        <div class="row">
+            <div class="col s10">
+
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <div class="card">
+                            <div class="card-image img-responsive">
+                                <img class="activator" id="movie-poster">
+                            </div>
+                            <div class="card-content" class="activator">
+                                <span class="card-title activator" id="movie-title"></span>
+
+                            </div>
+                            <div class="card-action">
+                                <a id="movie-year"></a>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Overview<i
+                                        class="material-icons right">close</i></span>
+                                <p id="movie-plot"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <div class="card">
+                            <div class="card-image img-responsive">
+                                <img class="activator" id="food-poster">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title" id="food-title"></span>
+                            </div>
+                            <div class="card-action">
+                                <a id="food-recipe" target="_blank">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn" id="thumb-up-btn">Thumb Up</button>
+                <button class="btn" id="thumb-down-btn">Thumb Down</button>
+                <button class="btn" id="home-btn">Home</button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--FOOTER -->
+    <footer class="page-footer">
+        <div class="row">
+            <div class="col s12 m6">
+                © 2020 Copyright The Wicked Coders
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- MATERIALIZE CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- OUR JS SCRIPTS -->
+    <script src="assets/js/endscript.js"></script>
+</body>
+
+</html>
