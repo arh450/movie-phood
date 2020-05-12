@@ -23,6 +23,12 @@ $(document).ready(function () {
 
     renderHtml("moviesection.html");
   });
+
+
+
+
+
+
 });
 
 

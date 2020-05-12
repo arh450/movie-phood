@@ -41,45 +41,48 @@ $(document).ready(function () {
         var movieQueryURL = `https://api.themoviedb.org/3/search/movie?api_key=${movieApiKey}&language=en-US&query=${userMovieInputs[randomUserMovieInput]}&page=1&include_adult=false`
 
         // AJAX call to get id number of the movie was passed through the movieQueryURL (ex. Scarface's id number is 111)
-        $.get(movieQueryURL).then(function (userResponse) {
-            console.log(userResponse);
+        if (userMovieInputs[randomUserMovieInput] !== "") {
+            $.get(movieQueryURL).then(function (userResponse) {
+                console.log(userResponse);
 
-            // Variable that is the id for the most popular version of a certain movie(?)
-            // By index position (ex. 1983 scarface is at 0 position as it has the highest themoviedb popualrity rating,  1932's scarface has a index position of 1 as it is the second most popular verison of a movie by that same name)
-            var movieId = userResponse.results[0].id;
-            console.log(movieId);
+                // Variable that is the id for the most popular version of a certain movie(?)
+                // By index position (ex. 1983 scarface is at 0 position as it has the highest themoviedb popualrity rating,  1932's scarface has a index position of 1 as it is the second most popular verison of a movie by that same name)
+                var movieId = userResponse.results[0].id;
+                console.log(movieId);
 
-            // After getting the movieId number, it is passed through another themoviedb url relating to movie recommendations.
-            var idQueryURL = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${movieApiKey}&language=en-US&page=1`;
+                // After getting the movieId number, it is passed through another themoviedb url relating to movie recommendations.
+                var idQueryURL = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${movieApiKey}&language=en-US&page=1`;
 
-            // AJAX call to generate random movie from themoviedb recommendations object
-            $.get(idQueryURL).then(function (idResponse) {
-                console.log(idResponse);
+                // AJAX call to generate random movie from themoviedb recommendations object
+                $.get(idQueryURL).then(function (idResponse) {
+                    console.log(idResponse);
 
-                // variable that is the randomized index position of the idResponse call
-                var randomMovieResult = Math.floor(Math.random() * idResponse.results.length);
-                // console.log(randomMovieResult);
+                    // variable that is the randomized index position of the idResponse call
+                    var randomMovieResult = Math.floor(Math.random() * idResponse.results.length);
+                    // console.log(randomMovieResult);
 
-                // Varaible that takes the randomMovieResult number (index position) and then returns the object of the randomized movie
-                var recMovieResult = idResponse.results[randomMovieResult];
-                console.log(recMovieResult);
+                    // Varaible that takes the randomMovieResult number (index position) and then returns the object of the randomized movie
+                    var recMovieResult = idResponse.results[randomMovieResult];
+                    console.log(recMovieResult);
 
-                // Variable that gives release date of recomended (random movie), and using split() to return .release_date into an array and return just the movie release year
-                var recMovieYear = recMovieResult.release_date.split("-");
-                // Variable that gives recommended (random) movie poster using theMovieDB image url
-                var recMoviePoster = `http://image.tmdb.org/t/p/w300${recMovieResult.poster_path}`;
+                    // Variable that gives release date of recomended (random movie), and using split() to return .release_date into an array and return just the movie release year
+                    var recMovieYear = recMovieResult.release_date.split("-");
+                    // Variable that gives recommended (random) movie poster using theMovieDB image url
+                    var recMoviePoster = `http://image.tmdb.org/t/p/w300${recMovieResult.poster_path}`;
 
-                // Set empty userMovieInfo object with recommended random movie result data
-                userMovieInfo = {
-                    title: recMovieResult.title,
-                    year: recMovieYear[0],
-                    imgSrc: recMoviePoster,
-                    plot: recMovieResult.overview
-                }
+                    // Set empty userMovieInfo object with recommended random movie result data
+                    userMovieInfo = {
+                        title: recMovieResult.title,
+                        year: recMovieYear[0],
+                        imgSrc: recMoviePoster,
+                        plot: recMovieResult.overview
+                    }
 
-                console.log(userMovieInfo);
+                    console.log(userMovieInfo);
 
+                });
             });
-        });
+        } else alert("please enter Three Movies before submitting!");
+
     });
 });
