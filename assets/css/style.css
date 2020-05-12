@@ -1,14 +1,21 @@
+/* LOGO */
+
 img {
   padding: 0px 5px 0px 0px;
   margin-left: 10px;
   width: 65px;
 }
 
+/* MAIN PAGE ITEMS */
+
 h1 {
+  font-family: 'Bellota Text', cursive;
   text-align: center;
+  font-weight: bold;
 }
 
 body {
+  font-family: 'Bellota Text', cursive;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -18,19 +25,37 @@ main {
   flex: 1 0 auto;
 }
 
-#app-start {
-  display: flex;
-  justify-content: center;
-  flex-direction: row-reverse;
-  align-items: flex-end;
+/* MAIN PAGE CARD */
+
+.card {
+  max-width: 500px;
+  align-items: center;  
 }
 
 .card-title {
   text-align: center;
 }
 
+.card-verbiage {
+  text-align: center;
+}
+
+
+#card-start {
+  align-items: center;
+  display: flex;
+}
+
+/* CAROUSEL */
+
 #carousel {
-  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* BUTTON */
+
+#app-start {
+  margin-bottom: 20px;
 }
 .header-1 {
   text-align: center;

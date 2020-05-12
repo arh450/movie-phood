@@ -9,7 +9,11 @@ $(document).ready(function () {
     indicators: true,
   });
 
-  // Empty object that stores users random movie/food/drink recommendations and information
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
 
   var userCombination = {
 
