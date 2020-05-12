@@ -159,9 +159,11 @@ $(document).ready(function () {
 
       renderHtml("foodsection.html");
       populateFoodSelect()
-    } else alert("please enter Three Movies before submitting!");
 
-    renderHtml("moviesection.hmtl");
+    } else {
+      alert("please enter Three Movies before submitting!")
+      renderHtml("moviesection.hmtl");
+    }
   });
 });
 
@@ -171,5 +173,40 @@ $(document).on("click", "#food-submit", function (event) {
   // Variable to show what user selected for food category
   var userFoodCategory = $("#food-category-select").val();
   console.log(userFoodCategory);
+
+  // theMealDB to filter users selected food category
+  var filterFoodURL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${userFoodCategory}`;
+  // AJAX call to get filtered response
+  $.get(filterFoodURL).then(function (filteredResponse) {
+    console.log(filteredResponse);
+
+    // Varialbe similar to randomUserMovieInput, that generates a random index position from the filteredResponse
+    var randomFoodResult = Math.floor(Math.random() * filteredResponse.meals.length);
+    console.log(randomFoodResult);
+
+    // Variable that takes the randomFoodResult (number/index position) and matches within the filteredResponse array of objects and returns the meal title
+    var recFoodTitle = filteredResponse.meals[randomFoodResult].strMeal;
+    console.log(recFoodTitle);
+
+    // Variable similar to recFoodTitle, that instead returning food title (.strMeal), it returns the food's image path
+    var recFoodImage = filteredResponse.meals[randomFoodResult].strMealThumb;
+    console.log(recFoodImage);
+
+    // Last AJAX call regarding food, this searches the recFoodTitle (food name) and is used to get the recipe source for the food
+    var foodSearchURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recFoodTitle}`;
+
+    $.get(foodSearchURL).then(function (searchResponse) {
+      console.log(searchResponse);
+
+      // Variable to return the recipe source (URL) from the searchResponse
+      var recFoodRecipe = searchResponse.meals[0].strSource;
+      console.log(recFoodRecipe);
+    });
+
+
+
+
+
+  });
 });
 
