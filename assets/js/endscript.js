@@ -32,15 +32,16 @@ $(document).ready(function () {
         var getDrinkInfo = localStorage.getItem('DrinkInfo');
         var finalDrinkInfo = JSON.parse(getDrinkInfo);
 
-
         console.log(finalDrinkInfo);
+
+
 
 
     }
 
     getMovieCombo();
     getFoodCombo();
-    getDrinkCombo()
+    getDrinkCombo();
 
 
     $(document).on("click", "#thumb-down-btn", function (event) {
