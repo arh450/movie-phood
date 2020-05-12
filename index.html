@@ -7,46 +7,54 @@
   <title>Movie Phood Project</title>
   <!-- MATERIALIZE CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- MATERIALIZE ICONS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- FONT LINK -->
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
   <!-- OUR CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
   <!-- NAV SECTION -->
-  <header>
-    <nav>
-      <div class="nav-wrapper">
-        <a class="left brand-logo"><img src="assets/img/moviephood_logo.png" /></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
-      </div>
-    </nav>
-  </header>
+  <nav>
+    <div class="red accent-4 nav-wrapper">
+      <a class="left brand-logo"><img src="assets/img/moviephood_logo.png" alt="moviephood_logo" /></a>
+    </div>
+  </nav>
 
   <!-- WELCOME SECTION -->
   <main>
-    <section id="about-area">
+    <div id="about-area">
       <h1>Welcome to MoviePhood!<br>Press start to begin</h1>
+    </div>
 
+    <!-- START BUTTON -->
+    <div class="row center">
+      <div class="btn-large waves-effect waves-light amber" id="app-start">
+        <span>Start</span>
+      </div>
+    </div>
 
-      <!-- CARDS AREA -->
-      <div class="row">
-        <div class="col s12 m12">
-          <div class="card blue-grey darken-1">
+    <!-- CARDS AREA -->
+    <div class="container" id="card-start">
+      <div class="row valign-wrapper">
+        <div class="col s12 valign">
+          <div class="card black darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
+              <span class="card-title">Movie Food and Beverage Pairings</span>
+              <p class="card-verbiage">
+                When you're craving a low-key night in, there are usually two requirements: good food and a classic
+                movie. We'll help you out with that. Sample Pairing: 'Good Will Hunting' paired with "Burgers" & a glass
+                of "Coke".
               </p>
             </div>
           </div>
         </div>
-
-        <!-- START BUTTON -->
-        <div class="btn-large" id="app-start">
-          <span>Start</span>
-        </div>
+      </div>
+    </div>
+    </div>
+    </div>
     </section>
 
     <!--USER INPUT SECTION RELATED TO MOVIEs/FOOD/DRINKS -->
@@ -54,48 +62,66 @@
 
     <!--REVIEWS SLIDESHOW -->
     <section>
-      <div class="container">
-        <div class="carousel carousel-slider center" id="carousel">
-          <div class="carousel-fixed-item center">
-          </div>
+      <!-- <div class="container"> -->
+      <div class="carousel carousel-slider center" id="carousel">
+        <div class="carousel-fixed-item center">
+        </div>
 
-          <div class="carousel-item red white-text" href="#one!">
-            <h2>"I love this website, it is amazing!"</h2>
-            <p class="white-text">- Jackie Kennedy</p>
-            <button class="black-text"> NEXT </button>
-          </div>
-          <div class="carousel-item amber white-text" href="#two!">
-            <h2>"MoviePhood always helps me figure out my perfect movie night."</h2>
-            <p class="white-text">- George Washington</p>
-            <button class="black-text"> NEXT </button>
-          </div>
-          <div class="carousel-item green white-text" href="#three!">
-            <h2>"MoviePhood, you complete me."</h2>
-            <p class="white-text">- Jerry McGuire</p>
-            <button class="black-text"> NEXT </button>
-          </div>
-          <div class="carousel-item blue white-text" href="#four!">
-            <h2>"Movies, food. What's not to love?!?!"</h2>
-            <p class="white-text">- Michael Jordan</p>
-            <button class="black-text"> NEXT </button>
-          </div>
-          <div class="carousel-item purple white-text" href="#four!">
-            <h2>"I don't know how to live without MoviePhood! I never paired the right</br> movie to the
-              right before."</h2>
-            <p class="white-text">- Albert Einstien</p>
-            <button class="black-text"> NEXT </button>
-          </div>
+        <div class="carousel-item red accent-4 white-text" href="#one!">
+          <h2>"I love this website, it is amazing!"</h2>
+          <p class="white-text">- Jackie Kennedy</p>
+        </div>
+
+        <div class="carousel-item amber white-text" href="#two!">
+          <h2>"MoviePhood always helps me figure out my perfect movie night."</h2>
+          <p class="white-text">- George Washington</p>
+        </div>
+
+        <div class="carousel-item red accent-4 white-text" href="#three!">
+          <h2>"MoviePhood, you complete me."</h2>
+          <p class="white-text">- Jerry McGuire</p>
+        </div>
+
+        <div class="carousel-item amber white-text" href="#four!">
+          <h2>"Movies, food. What's not to love?!?!"</h2>
+          <p class="white-text">- Michael Jordan</p>
+        </div>
+
+        <div class="carousel-item red accent-4 white-text" href="#four!">
+          <h2>"I don't know how to live without MoviePhood! I never paired the right</br> movie to the
+            right before."</h2>
+          <p class="white-text">- Albert Einstien</p>
+        </div>
+
+        <div class="carousel-item amber white-text" href="#four!">
+          <h2>"I don't know how to live without MoviePhood!<br>I never paired the right</br> movie to the
+            right food before."</h2>
+          <p class="white-text">- Albert Einstien</p>
+        </div>
+
+        <div class="carousel-item red accent-4 white-text" href="#four!">
+          <h2>"I don't know how to live without MoviePhood!<br>I never paired the right</br> movie to the
+            right food before."</h2>
+          <p class="white-text">- Albert Einstien</p>
+        </div>
+
+        <div class="carousel-item amber white-text" href="#four!">
+          <h2>"I don't know how to live without MoviePhood!<br>I never paired the right</br> movie to the
+            right food before."</h2>
+          <p class="white-text">- Albert Einstien</p>
         </div>
       </div>
+      <!-- </div> -->
     </section>
 
   </main>
 
+
   <!--FOOTER -->
 
-  <footer class="page-footer">
+  <footer class="red accent-4 page-footer">
     <div class="row">
-      <div class="col s12 m6">
+      <div class="col s12 m12">
         © 2020 Copyright The Wicked Coders
       </div>
     </div>

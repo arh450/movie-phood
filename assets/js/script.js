@@ -9,6 +9,11 @@ $(document).ready(function () {
     indicators: true,
   });
 
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
 
   function renderHtml(html) {
     $("#user-input-section").load(html);
