@@ -26,7 +26,11 @@ $(document).ready(function () {
       fRecipe: ""
     },
 
-
+    userDrinkInfo: {
+      dTitle: "",
+      dImgSrc: "",
+      dIns: ""
+    }
 
 
   }
@@ -40,18 +44,18 @@ $(document).ready(function () {
     var foodTypeURL = `https://www.themealdb.com/api/json/v1/1/list.php?c=list`;
 
     // AJAX call to get the food catergories from theMealDB
-    $.get(foodTypeURL).then(function (categoryResponse) {
-      // console.log(categoryResponse);
+    $.get(foodTypeURL).then(function (foodCategoryResponse) {
+      // console.log(foodCategoryResponse);
 
-      // Variable to access the categoryResponse object
-      var categoryResults = categoryResponse.meals;
+      // Variable to access the foodCategoryResponse object
+      var foodCategoryResults = foodCategoryResponse.meals;
 
-      // For loop that loops the length of categorResults then returns the category for earch index position
-      for (var i = 0; i < categoryResults.length; i++) {
-        // console.log(categoryResults[i].strCategory);
+      // For loop that loops the length of foodCategoryResults then returns the category for earch index position
+      for (var i = 0; i < foodCategoryResults.length; i++) {
+        // console.log(foodCategoryResults[i].strCategory);
 
         // Created element to display each food category in the select menu
-        var foodCategoryDisplay = $("<option>").addClass("food-category").text(categoryResults[i].strCategory);
+        var foodCategoryDisplay = $("<option>").addClass("food-category").text(foodCategoryResults[i].strCategory);
 
         // Appends each option element to the select element parent
         $("#food-category-select").append(foodCategoryDisplay);
@@ -62,29 +66,33 @@ $(document).ready(function () {
     });
   }
 
+  function populateDrinkSelect() {
 
+    // theCockTailDB query URL for drink Catergories
+    var drinkTypeURL = `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`;
 
+    // AJAX call to get the food catergories from theCockTailDB
+    $.get(drinkTypeURL).then(function (drinkCategoryResponse) {
+      // console.log(drinkCategoryResponse);
 
+      // Variable to access the drinkCategoryResponse object
+      var drinkCategoryResults = drinkCategoryResponse.drinks;
 
+      // For loop that loops the length of drinkCategoryResults then returns the category for earch index position
+      for (var i = 0; i < drinkCategoryResults.length; i++) {
+        // console.log(drinkCategoryResults[i].strCategory);
 
+        // Created element to display each drink category in the select menu
+        var drinkCategoryDisplay = $("<option>").addClass("drink-category").text(drinkCategoryResults[i].strCategory);
 
+        // Appends each option element to the select element parent
+        $("#drink-category-select").append(drinkCategoryDisplay);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // Materialize Jquery to initialize "select" menu
+        $('select').formSelect();
+      }
+    });
+  }
 
   // On click of #app-start button ("start on html") #about-area (title & description is hidden)
   // Then the empty #user-input-section is loaded with the moviesection html
@@ -172,60 +180,145 @@ $(document).ready(function () {
       renderHtml("moviesection.hmtl");
     }
   });
-});
 
-// on click of #food-submit button (shown as submit on HTML)
-$(document).on("click", "#food-submit", function (event) {
 
-  // Variable to show what user selected for food category
-  var userFoodCategory = $("#food-category-select").val();
-  // console.log(userFoodCategory);
+  // on click of #food-submit button (shown as submit on HTML)
+  $(document).on("click", "#food-submit", function (event) {
 
-  // if statement to prevent user from leaving food select blank
-  if (userFoodCategory === null) {
-    alert("please select a food category");
-  } else {
+    // Variable to show what user selected for food category
+    var userFoodCategory = $("#food-category-select").val();
+    // console.log(userFoodCategory);
 
-    // theMealDB to filter users selected food category
-    var filterFoodURL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${userFoodCategory}`;
-    // AJAX call to get filtered response
-    $.get(filterFoodURL).then(function (filteredResponse) {
-      // console.log(filteredResponse);
+    // if statement to prevent user from leaving food select blank
+    if (userFoodCategory === null) {
+      alert("please select a food category");
+    } else {
 
-      // Varialbe similar to randomUserMovieInput, that generates a random index position from the filteredResponse
-      var randomFoodResult = Math.floor(Math.random() * filteredResponse.meals.length);
-      // console.log(randomFoodResult);
+      // theMealDB to filter users selected food category
+      var filterFoodURL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${userFoodCategory}`;
+      // AJAX call to get filtered response
+      $.get(filterFoodURL).then(function (filteredFoodResponse) {
+        // console.log(filteredFoodResponse);
 
-      // Variable that takes the randomFoodResult (number/index position) and matches within the filteredResponse array of objects and returns the meal title
-      var recFoodTitle = filteredResponse.meals[randomFoodResult].strMeal;
-      // console.log(recFoodTitle);
+        // Varialbe similar to randomUserMovieInput, that generates a random index position from the filteredFoodResponse
+        var randomFoodResult = Math.floor(Math.random() * filteredFoodResponse.meals.length);
+        // console.log(randomFoodResult);
 
-      // Variable similar to recFoodTitle, that instead returning food title (.strMeal), it returns the food's image path
-      var recFoodImage = filteredResponse.meals[randomFoodResult].strMealThumb;
-      // console.log(recFoodImage);
+        // Variable that takes the randomFoodResult (number/index position) and matches within the filteredFoodResponse array of objects and returns the meal title
+        var recFoodTitle = filteredFoodResponse.meals[randomFoodResult].strMeal;
+        // console.log(recFoodTitle);
 
-      // Last AJAX call regarding food, this searches the recFoodTitle (food name) and is used to get the recipe source for the food
-      var foodSearchURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recFoodTitle}`;
+        // Variable similar to recFoodTitle, that instead returning food title (.strMeal), it returns the food's image path
+        var recFoodImage = filteredFoodResponse.meals[randomFoodResult].strMealThumb;
+        // console.log(recFoodImage);
 
-      $.get(foodSearchURL).then(function (searchResponse) {
-        // console.log(searchResponse);
+        // Last AJAX call regarding food, this searches the recFoodTitle (food name) and is used to get the recipe source for the food
+        var foodSearchURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recFoodTitle}`;
 
-        // Variable to return the recipe source (URL) from the searchResponse
-        var recFoodRecipe = searchResponse.meals[0].strSource;
-        // console.log(recFoodRecipe);
+        $.get(foodSearchURL).then(function (searchFoodResponse) {
+          // console.log(searchFoodResponse);
 
-        userFoodInfo = {
-          fTitle: recFoodTitle,
-          fImgSrc: recFoodImage,
-          fRecipe: recFoodRecipe
-        }
+          // Variable to return the recipe source (URL) from the searchResponse
+          var recFoodRecipe = searchFoodResponse.meals[0].strSource;
+          // console.log(recFoodRecipe);
 
-        console.log(userFoodInfo);
+          userFoodInfo = {
+            fTitle: recFoodTitle,
+            fImgSrc: recFoodImage,
+            fRecipe: recFoodRecipe
+          }
+
+          console.log(userFoodInfo);
+
+        });
 
       });
+      renderHtml("drinksection.html");
+      populateDrinkSelect()
+    }
+  });
+
+  // on click of #drink-submit button (shown as submit on HTML)
+  $(document).on("click", "#drink-submit", function (event) {
+    // variable to show what user selected for drink category
+    var userDrinkCategory = $("#drink-category-select").val();
+    console.log(userDrinkCategory);
+
+    // if statement to prevent user from leaving drink select blank
+    if (userDrinkCategory === null) {
+      alert("please select a drink category");
+    } else {
+      // theCockTailDB to filter the users selected drink category
+      var filterDrinkURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${userDrinkCategory}`;
+      // AJAX call to get filtered drink response
+      $.get(filterDrinkURL).then(function (filteredDrinkResponse) {
+        // console.log(filteredDrinkResponse);
+
+        // Varialbe similar to other random inputs, generates a random index position from the filteredDrinkResponse
+        var randomDrinkResult = Math.floor(Math.random() * filteredDrinkResponse.drinks.length);
+        console.log(randomDrinkResult);
+
+        // Variable that takes the randomDrinkResult (number/index position) and matches within the filteredDrinkResponse array of objects and returns the drink title
+        var recDrinkTitle = filteredDrinkResponse.drinks[randomDrinkResult].strDrink;
+        console.log(recDrinkTitle);
+
+        // Variable similar to recDrinkTitle, that instead of returning food title (.strDrink), it returns the food's image path
+        var recDrinkImage = filteredDrinkResponse.drinks[randomDrinkResult].strDrinkThumb;
+        console.log(recDrinkImage);
+
+        // Last AJAX call regarding drinks, this searches the recDrinkTitle (drink name) and is used to get the instructions for the drink
+        var drinkSearchURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${recDrinkTitle}`;
+
+        $.get(drinkSearchURL).then(function (searchDrinkResponse) {
+          // console.log(searchDrinkResponse);
+
+          // Variable to return the recipe source (URL) from the searchDrinkResponse
+          var recDrinkIns = searchDrinkResponse.drinks[0].strInstructions;
+          // console.log(recDrinkIns);
+
+          userDrinkInfo = {
+            dTitle: recDrinkTitle,
+            dImgSrc: recDrinkImage,
+            dIns: recDrinkIns
+          }
+
+          console.log(userDrinkInfo);
+
+        });
+      });
+
+    }
+  });
 
 
-    });
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
-
