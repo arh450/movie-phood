@@ -156,16 +156,20 @@ $(document).ready(function () {
         });
 
       });
+
       renderHtml("foodsection.html");
       populateFoodSelect()
     } else alert("please enter Three Movies before submitting!");
+
     renderHtml("moviesection.hmtl");
   });
-
-
-
-
 });
 
+// on click of #food-submit button (shown as submit on HTML)
+$(document).on("click", "#food-submit", function (event) {
 
+  // Variable to show what user selected for food category
+  var userFoodCategory = $("#food-category-select").val();
+  console.log(userFoodCategory);
+});
 
