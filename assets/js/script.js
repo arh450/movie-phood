@@ -291,9 +291,11 @@ $(document).ready(function () {
 
           console.log(userDrinkInfo);
           localStorage.setItem('DrinkInfo', JSON.stringify(userDrinkInfo));
+        }).catch(function (error) {
+          console.log(error);
         });
       });
-      window.location.replace("results.html");
+      // window.location.replace("results.html");
     }
   });
 
