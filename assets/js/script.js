@@ -103,6 +103,8 @@ $(document).ready(function () {
   $(document).on("click", "#app-start", function (event) {
     event.preventDefault(event);
     $("#about-area").hide();
+    $("#card-start").hide();
+    $("#app-start").hide();
     $("#carousel").hide();
 
     renderHtml("moviesection.html");
