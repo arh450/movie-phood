@@ -56,19 +56,17 @@ main {
 #app-start {
   margin-bottom: 20px;
 }
+
+/* MOVIE SECTION ITEMS */
+
 .header-1 {
   text-align: center;
   padding-top: 3%;
   color: black;
   font-size: 40px;
 }
-.container{
-  margin-top: 4%;
-  padding-bottom: 1%;
-  color:black;
-  font-size: 22px;
-  
-}
+
+
 
 
 /* red used #d50000 red and gold is #ffc107 */
