@@ -295,7 +295,7 @@ $(document).ready(function () {
           console.log(error);
         });
       });
-      // window.location.replace("results.html");
+      window.location.replace("results.html");
     }
   });
 
