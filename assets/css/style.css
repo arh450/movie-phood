@@ -73,6 +73,12 @@ footer {
   width:100%;
 }
 
+.dropdown-content li>span {
+  font-size: 16px;
+  color: black;
+  display: block;
+  line-height: 22px;
+  padding: 14px 16px;
 
-
+  
 /* red used #d50000 red and gold is #ffc107 */
