@@ -59,7 +59,7 @@ $(document).ready(function () {
         // console.log(foodCategoryResults[i].strCategory);
 
         // Created element to display each food category in the select menu
-        var foodCategoryDisplay = $("<option>").addClass("food-category").text(foodCategoryResults[i].strCategory);
+        var foodCategoryDisplay = $("<option>").addClass("food-category black-text").text(foodCategoryResults[i].strCategory);
 
         // Appends each option element to the select element parent
         $("#food-category-select").append(foodCategoryDisplay);
