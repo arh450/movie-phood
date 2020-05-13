@@ -183,7 +183,9 @@ $(document).ready(function () {
       renderHtml("foodsection.html");
       populateFoodSelect()
     } else {
-      alert("please enter Three Movies before submitting!")
+      // $("#error-modal").modal('show');
+      // $("#error-text").text("Please enter Three Movies before submitting!");
+      alert("Please enter Three Movies before submitting!")
       renderHtml("moviesection.hmtl");
     }
   });
