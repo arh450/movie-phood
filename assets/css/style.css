@@ -40,7 +40,6 @@ main {
   text-align: center;
 }
 
-
 #card-start {
   align-items: center;
   display: flex;
@@ -49,7 +48,7 @@ main {
 /* CAROUSEL */
 
 #carousel {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 /* BUTTON */
@@ -57,19 +56,21 @@ main {
 #app-start {
   margin-bottom: 20px;
 }
+
+/* MOVIE SECTION ITEMS */
+
 .header-1 {
   text-align: center;
   padding-top: 3%;
   color: black;
   font-size: 40px;
 }
-.container{
-  margin-top: 4%;
-  padding-bottom: 1%;
-  color:black;
-  font-size: 22px;
-  
+
+footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
 }
 
-
-// red used #d50000 red and gold is #ffc107
+/* red used #d50000 red and gold is #ffc107 */

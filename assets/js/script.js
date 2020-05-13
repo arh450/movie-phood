@@ -59,7 +59,7 @@ $(document).ready(function () {
         // console.log(foodCategoryResults[i].strCategory);
 
         // Created element to display each food category in the select menu
-        var foodCategoryDisplay = $("<option>").addClass("food-category").text(foodCategoryResults[i].strCategory);
+        var foodCategoryDisplay = $("<option>").addClass("food-category black-text").text(foodCategoryResults[i].strCategory);
 
         // Appends each option element to the select element parent
         $("#food-category-select").append(foodCategoryDisplay);
@@ -103,6 +103,8 @@ $(document).ready(function () {
   $(document).on("click", "#app-start", function (event) {
     event.preventDefault(event);
     $("#about-area").hide();
+    $("#card-start").hide();
+    $("#app-start").hide();
     $("#carousel").hide();
 
     renderHtml("moviesection.html");
@@ -291,41 +293,26 @@ $(document).ready(function () {
 
           console.log(userDrinkInfo);
           localStorage.setItem('DrinkInfo', JSON.stringify(userDrinkInfo));
+        }).catch(function (error) {
+          console.log(error);
         });
       });
       window.location.replace("results.html");
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+
+
+//var states = ["California", "Texas", "Alabama", "Florida", "New Jersey", "Massachusetts", "Arizona", "Virginia", "New Mexico", "Kentucky", "Maryland", "Delaware", "Arkansas", "Illinois", "Georgia", "Wisconsin", "Colorado", "Pennsylvania", "Ohio", "Connecticut", "Missouri", "Alaska", "Tennessee", "North Carolina", "Oregon", "Michigan", "Oklahoma", "Iowa", "Kansas", "Wyoming", "Nevada", "Louisiana", "Vermont", "North Dakota", "West Virginia", "Montana", "Indiana", "South Dakota", "Maine", "Utah", "Hawaii", "Idaho", "Minnesota", "Nebraska", "New Hampshire", "South Carolina", "Rhode Island", "Washington", "Mississippi", "New York"];
+
+//var snacks = ["See's Candies", "Chips and Salsa", "Moon Pie", "Anastasia Confections Coconut Patties", "Salt Water Taffy", "Hoodsie Cup", "Prickly Pear Cactus Candy", "Rt 11 Potato Chip Chesapake Crab flavor", "Bizconito", " Borbon Balls", "Berger Cookie", "Crab Puffs", "Fried Dill Pickles", "Garrett Popcorn", "Pimento Cheese", "Fried Cheese Curde", "Jerkey", "TastyKake-Brand Snacks", "Buck Eye Candy", "White Clam Pie", "Toasted or Fried Ravioli", "Smoky Salmon Jerky", "GooGoo Clusters", "Krispy Kreme Donuts", "Juanitas Tortilla CHips", "Better Made potato Chips", "Fried Okra", "The Walking Taco", "Sticky Cinnamon", "Cowboy Jerkey", "Navajo Fry Bread", "Zapps Thick Cut Kettle Cooked Potato Chips", "Ben&Jerry Ice Cream", "Chippers", "Pepperoni Rolls", "Hucklberries", "Corn Dog", "Chislic", "whoopie Pie", "Jell-O", "Crack Seed", "French Fry", "Tator Tots", "Goodrich Ice Cream", "Maple Syrup Candie", "Boiled Peanuts", "Pizza Strips", "Half Pops", "Mississippi Cheese Straw", "Yogurt"];
+
+//function stateSnack() {
+ // states.forEach(states => {
+    //console.log(states[state]);        
+
+  //});
+
+//}
+//stateSnack(); 

@@ -7,6 +7,8 @@
     <title>Movie Phood Project</title>
     <!-- MATERIALIZE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- FONT LINK -->
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
     <!-- OUR CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -16,9 +18,8 @@
     <!-- NAV SECTION -->
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <a class="left brand-logo"><img src="assets/img/moviephood_logo.png" /></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
+            <div class="red accent-4 nav-wrapper">
+                <a class="left brand-logo"><img src="assets/img/moviephood_logo.png" alt="moviephood_logo" /></a>
             </div>
         </nav>
     </header>
@@ -63,18 +64,28 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn" id="thumb-up-btn">Thumb Up</button>
-                <button class="btn" id="thumb-down-btn">Thumb Down</button>
-                <button class="btn" id="home-btn">Home</button>
+                <button class="btn waves-effect waves-light black" id="thumb-up-btn">Thumb Up</button>
+                <button class="btn waves-effect waves-light black" id="thumb-down-btn">Thumb Down</button>
+                <button class="btn waves-effect waves-light black" id="home-btn">Home</button>
             </div>
         </div>
         </div>
     </section>
+    <div class="container">
+        <p class="link">
+            For more snack ideas click icon below!
+        </p>
+        <a href="https://www.purewow.com/food/Best-Movie-Theater-Snacks" target="_blank">
+            <img class="icon" src="assets/img/moviephood_logo.png" />
+        </a>
+    </div>
+
 
     <!--FOOTER -->
-    <footer class="page-footer">
+
+    <footer class="red accent-4 page-footer">
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s12 m12">
                 © 2020 Copyright The Wicked Coders
             </div>
         </div>
@@ -88,6 +99,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- OUR JS SCRIPTS -->
     <script src="assets/js/endscript.js"></script>
+
 </body>
 
 </html>
