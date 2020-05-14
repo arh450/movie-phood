@@ -185,6 +185,7 @@ $(document).ready(function () {
         M.toast({ html: 'There Is An Error With Your Entry, Please Try Again' });
       });
     } else {
+      M.toast({ html: 'Please Enter Three Movies Before Submitting!' });
 
 
 
