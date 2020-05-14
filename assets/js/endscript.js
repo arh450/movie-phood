@@ -47,10 +47,8 @@ $(document).ready(function () {
     $(document).on("click", "#thumb-down-btn", function (event) {
         renderRestart("index.html");
     });
-
-    $(document).on("click", "#thumb-up-btn", function (event) {
-
-    });
+    // THANK YOU MODAL IF USER SELECTS THUMBS UP BUTTON
+    $('.modal').modal();
 
     $(document).on("click", "#home-btn", function (event) {
         renderRestart("index.html");

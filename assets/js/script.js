@@ -301,7 +301,10 @@ $(document).ready(function () {
           console.log(error);
         });
       });
-      window.location.replace("results.html");
+      setTimeout(function () {
+        window.location.replace("results.html");
+      }, 1000);
+
     }
   });
 });
