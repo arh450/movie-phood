@@ -186,6 +186,10 @@ $(document).ready(function () {
       });
     } else {
       M.toast({ html: 'Please Enter Three Movies Before Submitting!' });
+
+
+
+      //alert("please enter Three Movies before submitting!")
       renderHtml("moviesection.hmtl");
     }
   });
