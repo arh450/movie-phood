@@ -89,7 +89,15 @@ footer {
   display: block;
   line-height: 22px;
   padding: 14px 16px;
+}
 
+/*  */
+#movie-user-input1, #movie-user-input2, #movie-user-input3 {
+  border-bottom: 1px solid #d50000;
+}
+
+input#movie-user-input1.validate {
+  border-bottom: 1px solid #d50000;
 }
 
 /* red used #d50000 red and gold is #ffc107 */
