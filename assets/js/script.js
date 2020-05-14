@@ -179,9 +179,11 @@ $(document).ready(function () {
           console.log(userMovieInfo);
           localStorage.setItem('MovieInfo', JSON.stringify(userMovieInfo));
         });
+        renderHtml("foodsection.html");
+        populateFoodSelect()
+      }).catch(function (error) {
+        M.toast({ html: 'There Is An Error With Your Entry, Please Try Again' });
       });
-      renderHtml("foodsection.html");
-      populateFoodSelect()
     } else {
       M.toast({ html: 'Please Enter Three Movies Before Submitting!' });
       renderHtml("moviesection.hmtl");
