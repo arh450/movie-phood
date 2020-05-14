@@ -1,6 +1,6 @@
 # Project 1 - Movie Phood
 
-![Project-1](./assets/images/MoviePhoodProject.gif)
+![Project-1](./assets/img/MoviePhoodProject.gif)
 
 ## Table of contents
 * [General info](#general-info)
