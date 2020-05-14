@@ -73,4 +73,23 @@ footer {
   width:100%;
 }
 
+/* SELECT MENU */
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #d50000;
+}
+
+.input-field.inline input, .input-field.inline .select-dropdown {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-content li>span {
+  font-size: 16px;
+  color: black;
+  display: block;
+  line-height: 22px;
+  padding: 14px 16px;
+
+}
+
 /* red used #d50000 red and gold is #ffc107 */
