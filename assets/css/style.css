@@ -100,4 +100,10 @@ input#movie-user-input1.validate {
   border-bottom: 1px solid #d50000;
 }
 
+/* USER RESULTS SECTION */
+#user-results-section {
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* red used #d50000 red and gold is #ffc107 */
