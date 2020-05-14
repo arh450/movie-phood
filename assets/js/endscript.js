@@ -10,19 +10,19 @@ $(document).ready(function () {
 
         console.log(finalMovieInfo);
 
-        $("#movie-poster").attr("src", finalMovieInfo.imgSrc);
-        $("#movie-title").text(finalMovieInfo.title);
-        $("#movie-year").text(`Year: ${finalMovieInfo.year}`);
-        $("#movie-plot").text(finalMovieInfo.plot);
+        $("#movie-poster").attr("src", finalMovieInfo.mImgSrc);
+        $("#movie-title").text(finalMovieInfo.mTitle);
+        $("#movie-year").text(`Year: ${finalMovieInfo.mYear}`);
+        $("#movie-plot").text(finalMovieInfo.mPlot);
     }
 
     function getFoodCombo() {
         var getFoodInfo = localStorage.getItem('FoodInfo');
         var finalFoodInfo = JSON.parse(getFoodInfo);
 
-        $("#food-poster").attr("src", finalFoodInfo.foodimgSrc);
-        $("#food-title").text(finalFoodInfo.meal);
-        $("#food-recipe").attr("href", finalFoodInfo.foodRecipe);
+        $("#food-poster").attr("src", finalFoodInfo.fImgSrc);
+        $("#food-title").text(finalFoodInfo.fTitle);
+        $("#food-recipe").attr("href", finalFoodInfo.fRecipe);
         console.log(finalFoodInfo);
 
 
@@ -32,6 +32,9 @@ $(document).ready(function () {
         var getDrinkInfo = localStorage.getItem('DrinkInfo');
         var finalDrinkInfo = JSON.parse(getDrinkInfo);
 
+        $("#drink-poster").attr("src", finalDrinkInfo.dImgSrc);
+        $("#drink-title").text(finalDrinkInfo.dTitle);
+        $("#drink-ins").text(finalDrinkInfo.dIns);
         console.log(finalDrinkInfo);
 
 
