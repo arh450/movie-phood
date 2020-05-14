@@ -19,14 +19,17 @@ Other technology used:
 * JavaScript
 * JSON
 * Ajax
-* APIs (list)
+* **APIs** 
+[Meal DB](https://www.themealdb.com/api.php)
+[Cocktail DB](https://www.thecocktaildb.com/api.php)
+[The Movie DB](https://www.themoviedb.org/)
 
 ## Authors
 
-* **Gus Heptig** - *Repo Owner* - [gheptig](https://github.com/gheptig)
+* **Gus Heptig** - *Contributor* - [gheptig](https://github.com/gheptig)
 * **Megan Pardy-Gokcu** - *Contributor* - [megan-pg](https://github.com/megan-pg)
 * **Diana Zsigray** - *Contributor* - [diana603](https://github.com/diana603)
-* **Karla McLeod** - *Contributor* - [gheptig](https://github.com/Kmcleod81)
+* **Karla McLeod** - *Contributor* - [Kmcleod81](https://github.com/Kmcleod81)
 
 ## Link to Page
 
