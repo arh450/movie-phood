@@ -25,6 +25,14 @@ main {
   flex: 1 0 auto;
 }
 
+footer {
+  position:fixed;
+  overflow: hidden;
+  bottom:0;
+  left:0;
+  width:100%;
+}
+
 /* MAIN PAGE CARD */
 
 .card {
@@ -66,12 +74,17 @@ main {
   font-size: 40px;
 }
 
-footer {
-  position:fixed;
-  overflow: hidden;
-  bottom:0;
-  left:0;
-  width:100%;
+/* MOVIE INPUTS */
+.movie-q {
+  font-size: 18px;
+  font-weight: bold;
+}
+#movie-user-input1, #movie-user-input2, #movie-user-input3 {
+  border-bottom: 1px solid #d50000;
+}
+
+input#movie-user-input1.validate {
+  border-bottom: 1px solid #d50000;
 }
 
 /* SELECT MENU */
@@ -92,14 +105,7 @@ footer {
   padding: 14px 16px;
 }
 
-/*  */
-#movie-user-input1, #movie-user-input2, #movie-user-input3 {
-  border-bottom: 1px solid #d50000;
-}
-
-input#movie-user-input1.validate {
-  border-bottom: 1px solid #d50000;
-}
+/* RESULTS SECTION */
 
 #user-results-section {
   margin: 10px auto 300px auto;
@@ -116,4 +122,5 @@ input#movie-user-input1.validate {
 .link {
   font-size: 20px;
 }
+
 /* red used #d50000 red and gold is #ffc107 */

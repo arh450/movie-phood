@@ -14,7 +14,7 @@ $(document).ready(function () {
     indicators: true
   });
 
-
+  // Empty object that stores user's movie, food, and drink information 
   var userCombination = {
 
     userMovieInfo: {
@@ -36,12 +36,14 @@ $(document).ready(function () {
       dIns: ""
     }
 
-
   }
+
+  // Function to load html sections
   function renderHtml(html) {
     $("#user-input-section").load(html);
   }
 
+  // Function to populate Materialize.css select dropdown menu (FOOD CATERGORIES)
   function populateFoodSelect() {
 
     // theMealDB query URL for food Catergories
@@ -54,7 +56,7 @@ $(document).ready(function () {
       // Variable to access the foodCategoryResponse object
       var foodCategoryResults = foodCategoryResponse.meals;
 
-      // For loop that loops the length of foodCategoryResults then returns the category for earch index position
+      // For loop that loops the length of foodCategoryResults then returns the category for each index position
       for (var i = 0; i < foodCategoryResults.length; i++) {
         // console.log(foodCategoryResults[i].strCategory);
 
@@ -70,19 +72,20 @@ $(document).ready(function () {
     });
   }
 
+  // Function to populate Materialize.css select dropdown menu (DRINK CATERGORIES)
   function populateDrinkSelect() {
 
     // theCockTailDB query URL for drink Catergories
     var drinkTypeURL = `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`;
 
-    // AJAX call to get the food catergories from theCockTailDB
+    // AJAX call to get the drink catergories from theCockTailDB
     $.get(drinkTypeURL).then(function (drinkCategoryResponse) {
       // console.log(drinkCategoryResponse);
 
       // Variable to access the drinkCategoryResponse object
       var drinkCategoryResults = drinkCategoryResponse.drinks;
 
-      // For loop that loops the length of drinkCategoryResults then returns the category for earch index position
+      // For loop that loops the length of drinkCategoryResults then returns the category for each index position
       for (var i = 0; i < drinkCategoryResults.length; i++) {
         // console.log(drinkCategoryResults[i].strCategory);
 
@@ -98,7 +101,7 @@ $(document).ready(function () {
     });
   }
 
-  // On click of #app-start button ("start on html") #about-area (title & description is hidden)
+  // On click of #app-start button ("start on html") start area (title, description, carousels, and start button is hidden)
   // Then the empty #user-input-section is loaded with the moviesection html
   $(document).on("click", "#app-start", function (event) {
     event.preventDefault(event);
@@ -110,7 +113,7 @@ $(document).ready(function () {
     renderHtml("moviesection.html");
   });
 
-  // on click of #movie-submit button (shown as submit on HTML)
+  // On click of #movie-submit button (shown as submit on HTML)
   $(document).on("click", "#movie-submit", function (event) {
     event.preventDefault(event);
 
@@ -138,7 +141,7 @@ $(document).ready(function () {
     // URL to search a movie by name using the name of the random movie from the userMovieInputsArray
     var movieQueryURL = `https://api.themoviedb.org/3/search/movie?api_key=${movieApiKey}&language=en-US&query=${userMovieInputs[randomUserMovieInput]}&page=1&include_adult=false`
 
-    // AJAX call to get id number of the movie was passed through the movieQueryURL (ex. Scarface's id number is 111)
+    // If Movie inputs are not nulll then AJAX call to get id number of the movie was passed through the movieQueryURL (ex. Scarface's id number is 111)
     if (userMovieInputs[randomUserMovieInput] !== "") {
       $.get(movieQueryURL).then(function (userResponse) {
         // console.log(userResponse);
@@ -155,7 +158,7 @@ $(document).ready(function () {
         $.get(idQueryURL).then(function (idResponse) {
           // console.log(idResponse);
 
-          // variable that is the randomized index position of the idResponse call
+          // Variable that is the randomized index position of the idResponse call
           var randomMovieResult = Math.floor(Math.random() * idResponse.results.length);
           // console.log(randomMovieResult);
 
@@ -163,7 +166,7 @@ $(document).ready(function () {
           var recMovieResult = idResponse.results[randomMovieResult];
           // console.log(recMovieResult);
 
-          // Variable that gives release date of recomended (random movie), and using split() to return .release_date into an array and return just the movie release year
+          // Variable that gives release date of recommended (random movie), and using split() to return .release_date into an array and return just the movie release year
           var recMovieYear = recMovieResult.release_date.split("-");
           // Variable that gives recommended (random) movie poster using theMovieDB image url
           var recMoviePoster = `http://image.tmdb.org/t/p/w300${recMovieResult.poster_path}`;
@@ -177,23 +180,29 @@ $(document).ready(function () {
           }
 
           console.log(userMovieInfo);
+
+          // Set userMovieInfo Object to localstorage
           localStorage.setItem('MovieInfo', JSON.stringify(userMovieInfo));
+
         });
+
+        // Load foodsection and then populate the food select menu
         renderHtml("foodsection.html");
         populateFoodSelect()
+
       }).catch(function (error) {
+        // If GET request fails show error toast
         M.toast({ html: 'There Is An Error With Your Entry, Please Try Again' });
       });
     } else {
+
+      // Error user with toast telling them to submit three movies before submit
       M.toast({ html: 'Please Enter Three Movies Before Submitting!' });
-
-
-
-      //alert("please enter Three Movies before submitting!")
+      // Then reload moviesection
       renderHtml("moviesection.hmtl");
+
     }
   });
-
 
   // on click of #food-submit button (shown as submit on HTML)
   $(document).on("click", "#food-submit", function (event) {
@@ -207,8 +216,9 @@ $(document).ready(function () {
       M.toast({ html: 'Please Select A Food Category!' });
     } else {
 
-      // theMealDB to filter users selected food category
+      // theMealDB to filter user's selected food category
       var filterFoodURL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${userFoodCategory}`;
+
       // AJAX call to get filtered response
       $.get(filterFoodURL).then(function (filteredFoodResponse) {
         // console.log(filteredFoodResponse);
@@ -221,7 +231,7 @@ $(document).ready(function () {
         var recFoodTitle = filteredFoodResponse.meals[randomFoodResult].strMeal;
         // console.log(recFoodTitle);
 
-        // Variable similar to recFoodTitle, that instead returning food title (.strMeal), it returns the food's image path
+        // Variable similar to recFoodTitle, that instead of returning food title (.strMeal), it returns the food's image path
         var recFoodImage = filteredFoodResponse.meals[randomFoodResult].strMealThumb;
         // console.log(recFoodImage);
 
@@ -235,6 +245,7 @@ $(document).ready(function () {
           var recFoodRecipe = searchFoodResponse.meals[0].strSource;
           // console.log(recFoodRecipe);
 
+          // Set userFoodInfo object with the user's food information
           userFoodInfo = {
             fTitle: recFoodTitle,
             fImgSrc: recFoodImage,
@@ -242,16 +253,19 @@ $(document).ready(function () {
           }
 
           console.log(userFoodInfo);
-          localStorage.setItem('FoodInfo', JSON.stringify(userFoodInfo));
-        });
 
+          // Set userFoodInfo to localstorage
+          localStorage.setItem('FoodInfo', JSON.stringify(userFoodInfo));
+
+        });
       });
+      // Load drink section and populate the drink select menu
       renderHtml("drinksection.html");
       populateDrinkSelect()
     }
   });
 
-  // on click of #drink-submit button (shown as submit on HTML)
+  // On click of #drink-submit button (shown as submit on HTML)
   $(document).on("click", "#drink-submit", function (event) {
     // variable to show what user selected for drink category
     var userDrinkCategory = $("#drink-category-select").val();
@@ -261,8 +275,10 @@ $(document).ready(function () {
     if (userDrinkCategory === null) {
       M.toast({ html: 'Please Select A Drink Category!' });
     } else {
+
       // theCockTailDB to filter the users selected drink category
       var filterDrinkURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${userDrinkCategory}`;
+
       // AJAX call to get filtered drink response
       $.get(filterDrinkURL).then(function (filteredDrinkResponse) {
         // console.log(filteredDrinkResponse);
@@ -275,7 +291,7 @@ $(document).ready(function () {
         var recDrinkTitle = filteredDrinkResponse.drinks[randomDrinkResult].strDrink;
         console.log(recDrinkTitle);
 
-        // Variable similar to recDrinkTitle, that instead of returning food title (.strDrink), it returns the food's image path
+        // Variable similar to recDrinkTitle, that instead of returning drink title (.strDrink), it returns the food's image path
         var recDrinkImage = filteredDrinkResponse.drinks[randomDrinkResult].strDrinkThumb;
         console.log(recDrinkImage);
 
@@ -285,10 +301,11 @@ $(document).ready(function () {
         $.get(drinkSearchURL).then(function (searchDrinkResponse) {
           // console.log(searchDrinkResponse);
 
-          // Variable to return the recipe source (URL) from the searchDrinkResponse
+          // Variable to return the drink instructions from the searchDrinkResponse
           var recDrinkIns = searchDrinkResponse.drinks[0].strInstructions;
           // console.log(recDrinkIns);
 
+          // Set userDrinkInfo with user's drink information
           userDrinkInfo = {
             dTitle: recDrinkTitle,
             dImgSrc: recDrinkImage,
@@ -296,17 +313,20 @@ $(document).ready(function () {
           }
 
           console.log(userDrinkInfo);
+          // Set userDrinkInfo to localstorage
           localStorage.setItem('DrinkInfo', JSON.stringify(userDrinkInfo));
-        }).catch(function (error) {
-          console.log(error);
+
         });
       });
+
+      // One second timeout function to give browser enough time to log drink response before loading results.html
       setTimeout(function () {
         window.location.replace("results.html");
       }, 1000);
 
     }
   });
+
 });
 
 
