@@ -100,11 +100,7 @@ input#movie-user-input1.validate {
   border-bottom: 1px solid #d50000;
 }
 
-/* USER RESULTS SECTION */
-#user-results-section {
-  margin: 0 auto;
-  text-align: center;
-}
+
 
 .poster {
   padding: 10px 20px 0 0;
@@ -112,4 +108,5 @@ input#movie-user-input1.validate {
   width: 200px;
   height: 250px;
 }
+
 /* red used #d50000 red and gold is #ffc107 */
