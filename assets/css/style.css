@@ -106,4 +106,10 @@ input#movie-user-input1.validate {
   text-align: center;
 }
 
+.poster {
+  padding: 10px 20px 0 0;
+  justify-content: center;
+  width: 200px;
+  height: 250px;
+}
 /* red used #d50000 red and gold is #ffc107 */
