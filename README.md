@@ -13,7 +13,7 @@
 An application to supply the user with a random selection of a movie, food item and beverage based on thier selections they enter.
     
 ## Technologies
-This app runs in the browser and features a responsive layout using Materialize.css and is dynamically updated with jQuery/JavaScript. 
+This app runs in the browser and features a responsive layout using Materialize and is dynamically updated with jQuery/JavaScript. We also used, Click Charts for the flow chart, Postman to test our APIs, Photoshop for image editing, Canva & Pixaboy for the logo that amazing Megan created. APIs used were TMDB, The Cocktail Database, and The Meal Database.
 
 Other technology used: 
 
