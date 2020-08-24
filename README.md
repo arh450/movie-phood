@@ -14,8 +14,6 @@
 
 An application to supply the user with a random selection of a movie, food item and beverage based on thier selections they enter.
 
-## Technologies
-
 This app runs in the browser and features a responsive layout using Materialize.css and is dynamically updated with jQuery/JavaScript.
 
 Other technology used:
