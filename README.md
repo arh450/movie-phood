@@ -1,4 +1,4 @@
-# Project 1 - Movie Phood
+# Movie Phood
 
 ![Project-1](./assets/img/MoviePhoodProject.gif)
 
